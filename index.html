@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Virtual Fest</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+	
+	</head>
+	<body>
+	<script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js"></script>
+
+		<script type="text/javascript">
+			
+			  var config = {
+			    apiKey: "AIzaSyCkn784i7T2ae03jUmDf0JiY7An3kUK6yA",
+			    authDomain: "virtualfest-fcc77.firebaseapp.com",
+			    databaseURL: "https://virtualfest-fcc77.firebaseio.com",
+			    projectId: "virtualfest-fcc77",
+			    storageBucket: "",
+			    messagingSenderId: "1036715053449"
+			  };
+			  firebase.initializeApp(config);
+			  const auth = firebase.auth();
+			  auth.onAuthStateChanged(function(user) {
+			  if (user) {
+			    // User is signed in.
+			   	console.log(user);
+			   	window.location.href = "./view/default.html";
+			  } else {
+			    window.location.href = "./view/login.html";
+			  }
+			});
+			
+		</script>
+
+	</body>
+		
+</html>
